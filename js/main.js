@@ -14,22 +14,22 @@ function topNavbar(el)
     if (!topNavbar(か(".banner").gt)) か(".navbar").sty("top", 0);
 
     // preload-image
-    // setTimeout(()=>{
-    //     か("#preload-img").sty("opacity", 1);
-    //     か(".preload-circle").sty("opacity", 1);
-    // }, 500);
+    setTimeout(()=>{
+        か("#preload-img").sty("opacity", 1);
+        か(".preload-circle").sty("opacity", 1);
+    }, 500);
 
     // preload-disappear
-    // setTimeout(()=>{
-    //     か(".preload-body").sty("opacity", 0);
-    // }, 4000);
+    setTimeout(()=>{
+        か(".preload-body").sty("opacity", 0);
+    }, 4000);
 
     // preload-go-by-bye
-    // setTimeout(()=>{
+    setTimeout(()=>{
         か(".preload-body").sty("display", "none");
         か("#preload-img").sty("display", "none");
         か(".preload-circle").sty("display", "none");
-    // }, 5000);
+    }, 5000);
 
 });
 
