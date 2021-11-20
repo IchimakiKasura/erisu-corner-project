@@ -1,0 +1,50 @@
+.topic {
+    text-align: center;
+    color: white;
+    margin-bottom: 350px;
+
+    h1 {
+        font-size: 55px;
+    }
+}
+
+.gallery-content {
+    cursor: pointer;
+    display: inline-table;
+    padding: 20px;
+    border: 1px solid white;
+    margin: 20px;
+    width: 0px;
+    border-radius: 20px;
+    transition: all 0.3s;
+
+    img {
+        box-shadow: 0 0 10px 2px cyan;
+        border-radius: 20px;
+        height: 450px;
+        transition: all 0.3s;
+    }
+
+    h5 {
+        padding: 20px;
+        font-size: 35px;
+    }
+
+    a {
+        color: transparent;
+        transition: all 0.5s;
+    }
+}
+
+.gallery-content:hover {
+    background: rgba(112, 112, 112, 0.15);  
+    border: 1px solid pink;
+
+    img {
+        box-shadow: 0 0 10px 2px pink;
+    }
+
+    a {
+        color: pink;
+    }
+}

@@ -25,13 +25,33 @@ if(か.isMobile) {
     // preload
     か("#preload-img").sty("height", "650px");
     か(".lds-ellipsis").atr("class", "lds-ellipsis-mobile preload-circle");
+    
+    try {
+        か("style[id='less:pages-Featured-css-index']").gt.remove();
+        か("[h2Desktop]").gt.remove();
+        か("[h2Mobile]").sty("display","block");
+    } catch { /* none */ }
 }
 
+function LoadingScreen()
+{
+    か(".preload-body").sty("display", "block");
+    か("#preload-img").sty("display", "inline-flex");
+    か(".preload-circle").sty("display", "inline-flex");
+
+    setTimeout(()=>{
+        か(".preload-body").sty("opacity", 1);
+    }, 10);
+
+    setTimeout(()=>{
+        か("#preload-img").sty("opacity", 0);
+        か(".preload-circle").sty("opacity", 0);
+    }, 1000);
+}
 
 // document
-か(document).contentLoad(()=>
+か(w).contentLoad(()=>
 {
-
     if (!topNavbar(か(".banner").gt)) か(".navbar").sty("top", 0);
 
     // preload-image
@@ -52,6 +72,28 @@ if(か.isMobile) {
         か(".preload-circle").sty("display", "none");
     }, 5000);
 
+    $("img[alt='ErisuFeaturesCentre']").click(()=>{
+
+        LoadingScreen();
+
+        setTimeout(()=>{
+            window.location.href = "./pages/ErisuFeaturesCentre.html";
+        }, 2000);
+    
+    })
+
+    $(".erisu-text").click(()=>{
+
+        LoadingScreen();
+        let loc = window.location.pathname;
+
+        loc = loc.replace(/[^\/]/g,"").replaceAll("/","/..")
+
+        setTimeout(()=>{
+            window.location.href = loc;
+        }, 2000);
+    
+    })
 });
 
 // buttons
@@ -81,23 +123,28 @@ if(か.isMobile) {
     }
 
 })
-か("img[alt='ErisuFeaturesCentre']").click(()=>{
+
+function getPage(url)
+{
     か(".preload-body").sty("display", "block");
-    か("#preload-img").sty("display", "block");
-    か(".preload-circle").sty("display", "block");
+    か("#preload-img").sty("display", "inline-flex");
+    か(".preload-circle").sty("display", "inline-flex");
+
     setTimeout(()=>{
-        か("#preload-img").sty("opacity", 1);
-        か(".preload-circle").sty("opacity", 1);
         か(".preload-body").sty("opacity", 1);
     }, 10);
-    setTimeout(()=>{
-        window.location.href = "./pages/ErisuFeaturesCentre.html";
-    }, 1000);
 
-})
+    setTimeout(()=>{
+        か("#preload-img").sty("opacity", 0);
+        か(".preload-circle").sty("opacity", 0);
+    }, 1000);
+    setTimeout(()=>{
+        window.location.href = `./Featured/${url}.html`;
+    }, 2000);
+}
 
 // topnavbar
-$(w).scroll(()=>
+か(w).scroll(()=>
 {
     if (!topNavbar(か(".banner").gt)) か(".navbar").sty("top", 0);
     else か(".navbar").sty("top", -80);
