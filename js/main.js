@@ -7,6 +7,27 @@ function topNavbar(el)
     return box.top < window.innerHeight && box.bottom >= 0;
 }
 
+// change style by code cuz fuck css
+if(か.isMobile) {
+
+    // banner
+    か(".footer").atr("class","footer mobile-footer")
+    か(".erisu-text").sty("bottom", "175px");
+    か(".erisu-text").sty("fontSize", "95px");
+    か(".banner").sty("width", "1500px");
+    か(".banner").sty("height", "350px");
+    か(".parallelogram").sty("width", "700px");
+    か(".parallelogram").sty("height", "180px");
+    か(".discord-link").sty("marginLeft", "850px");
+    か(".discord-link").sty("marginTop", "-10px");
+    か(".facebook-link").sty("marginLeft", "950px");
+
+    // preload
+    か("#preload-img").sty("height", "650px");
+    か(".lds-ellipsis").atr("class", "lds-ellipsis-mobile preload-circle");
+}
+
+
 // document
 か(document).contentLoad(()=>
 {
@@ -60,8 +81,19 @@ function topNavbar(el)
     }
 
 })
-か("img[alt='ErisuFeaturesCentre']").click(()=>{    
-    window.location.href = "./pages/ErisuFeaturesCentre.html";
+か("img[alt='ErisuFeaturesCentre']").click(()=>{
+    か(".preload-body").sty("display", "block");
+    か("#preload-img").sty("display", "block");
+    か(".preload-circle").sty("display", "block");
+    setTimeout(()=>{
+        か("#preload-img").sty("opacity", 1);
+        か(".preload-circle").sty("opacity", 1);
+        か(".preload-body").sty("opacity", 1);
+    }, 10);
+    setTimeout(()=>{
+        window.location.href = "./pages/ErisuFeaturesCentre.html";
+    }, 1000);
+
 })
 
 // topnavbar
