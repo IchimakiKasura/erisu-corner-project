@@ -81,20 +81,15 @@ function LoadingScreen()
         }, 2000);
     
     })
-
-    $(".erisu-text").click(()=>{
-
-        LoadingScreen();
-        let loc = window.location.pathname;
-
-        loc = loc.replace(/[^\/]/g,"").replaceAll("/","/..")
-
-        setTimeout(()=>{
-            window.location.href = loc;
-        }, 2000);
-    
-    })
 });
+
+function homepage(url)
+{
+    LoadingScreen();
+    setTimeout(()=>{
+        window.location.href = url;
+    }, 2000);
+}
 
 // buttons
 か(".facebook-link").click(function(){
