@@ -39,31 +39,53 @@
     <!-- https://github.com/nayleen/jQuery-Sakura -->
     <script src="cherry-blossom effect/cherryblossom.js"></script>
 
-    
+    <!-- kasuLibrary -->
+    <script src="js/kasu-beta-1.8.oc.mini.js"></script>
+
     <title>Erisu's Corner – EARIST's coolest anime club!</title>
 </head>
 <body>
+
+    <!-- Preload -->
     <div class="preload-body">
         <img id="preload-img" loading="lazy" src="img/favicon.jpg" alt="icon">
         <br>
         <div class="lds-ellipsis preload-circle"><div></div><div></div><div></div><div></div></div>
     </div>
 
+    <!-- Blossom Effect -->
     <div id="blossom_container"></div>
+
+    <!-- navigation -->
+    <div class="navbar">
+        <h1>エリス　コーナ</h1>
+        <div class="navbar-btn">
+            <span title="Like us on Facebook" >
+                <img src="img/f_logo_RGB-Blue_100.png" alt="facebook">
+                <p class="navbar-btn-text-fb not-selectable">Like us on Facebook</p>
+            </span>
+            <span title="Join our Discord">
+                <img src="img/Discord-Logo-Color.svg" alt="discord">
+                <p class="navbar-btn-text-ds not-selectable">Join our Discord</p>
+            </span>
+        </div>
+    </div>
+
+    <!-- banner -->
     <div class="banner">
         <div class="wrapper not-selectable">
             <h2>EARIST'S COOLEST ANIME CLUB!</h2>
             <div class="parallelogram""></div>
             <h3 class="erisu-text">エリス　コーナ</h3>
         </div>
-        <div class="discord-link" title="Join Discord?">
-            <div class="discord-banner not-selectable">
+        <div class="discord-link" title="Join our Discord?">
+            <div class="discord-banner not-selectable link">
                 <img src="img/Discord-Logo-Color.svg" alt="discord">
                 <p>discord.gg/gSKhxcEdny</p>
             </div>
         </div>
         <div class="facebook-link" title="Like us on Facebook!">
-            <div class="facebook-banner not-selectable">
+            <div class="facebook-banner not-selectable link">
                 <img src="img/f_logo_RGB-Blue_100.png" alt="facebook">
                 <p>fb.com/erisukona</p>
             </div>
@@ -127,6 +149,7 @@
 
     </div>
 
+    <!-- footer -->
     <div class="footer">
         <p style="font-size: 20px">Contact Erisu:</p>
         <span><img src="https://cdn-icons.flaticon.com/png/512/3059/premium/3059446.png?token=exp=1637356249~hmac=fc6bbd0e4fddaf7e2cb8b43863ed9149" alt="phone" style="top: 1px;">&nbsp;&nbsp;+63 991 418 4684</span>
@@ -135,7 +158,6 @@
         <br>
         <br>
         <button id="sakura-btn">Turn off sakura leaves?</button>
-        <br>
         <br>
         <br>
         <p>Designed by <a href="https://github.com/IchimakiKasura">Ichimaki Kasura</a></p>

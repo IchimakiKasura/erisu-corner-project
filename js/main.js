@@ -1,46 +1,55 @@
+const w = window;
 let sakura = true;
 
-$(document).ready(()=>{
+function topNavbar(el)
+{
+    let box = el.getBoundingClientRect();
+    return box.top < window.innerHeight && box.bottom >= 0;
+}
+
+// document
+か(document).contentLoad(()=>
+{
+
+    if (!topNavbar(か(".banner").gt)) か(".navbar").sty("top", 0);
 
     // preload-image
-    setTimeout(()=>{
-        $("#preload-img").css("opacity", 1);
-        $(".preload-circle").css("opacity", 1);
-    }, 500);
+    // setTimeout(()=>{
+    //     か("#preload-img").sty("opacity", 1);
+    //     か(".preload-circle").sty("opacity", 1);
+    // }, 500);
 
     // preload-disappear
-    setTimeout(()=>{
-        $(".preload-body").css("opacity", 0);
-    }, 4000);
+    // setTimeout(()=>{
+    //     か(".preload-body").sty("opacity", 0);
+    // }, 4000);
 
     // preload-go-by-bye
-    setTimeout(()=>{
-        $(".preload-body").css("display", "none");
-        $("#preload-img").css("display", "none");
-        $(".preload-circle").css("display", "none");
-    }, 5000);
+    // setTimeout(()=>{
+        か(".preload-body").sty("display", "none");
+        か("#preload-img").sty("display", "none");
+        か(".preload-circle").sty("display", "none");
+    // }, 5000);
 
 });
 
 // buttons
-$(".facebook-link").click(function(){
-    window.open("https://facebook.com/erisukona");
+か(".facebook-link").click(function(){
+    w.open("https://facebook.com/erisukona");
 })
-
-$(".discord-link").click(function(){
-    window.open("https://discord.gg/gSKhxcEdny");
+か(".discord-link").click(function(){
+    w.open("https://discord.gg/gSKhxcEdny");
 })
-
-$("#sakura-btn").click(()=>{
+か("#sakura-btn").click(()=>{
 
     if(sakura) {
+        か("#sakura-btn").text("turn on sakura leaves?");
         $("#blossom_container").sakura("stop");
-        $("#sakura-btn").text("turn on sakura leaves?");
         sakura = false;
     }
     else
     {
-        $("#sakura-btn").text("turn off sakura leaves?");
+        か("#sakura-btn").text("turn off sakura leaves?");
         $('#blossom_container').sakura('start', {
             fallSpeed: 0.5,        
             maxSize: 20,         
@@ -51,3 +60,13 @@ $("#sakura-btn").click(()=>{
     }
 
 })
+か("img[alt='ErisuFeaturesCentre']").click(()=>{    
+    window.location.href = "./pages/ErisuFeaturesCentre.html";
+})
+
+// topnavbar
+$(w).scroll(()=>
+{
+    if (!topNavbar(か(".banner").gt)) か(".navbar").sty("top", 0);
+    else か(".navbar").sty("top", -80);
+});
